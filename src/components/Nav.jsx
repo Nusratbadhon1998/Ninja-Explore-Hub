@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Nav() {
   return (
     <nav className="flex justify-around items-center px-1 md:px-5 lg:px-7 pt-5 mb-5 bg-stone-800 py-5">
-   
+   {/* Navbar start */}
       <div className=" hidden *:font-bold lg:navbar-start lg:block w-0 md:w-0 lg:w-[25%]">
         <ul className="space-x-5  *:hover:text-stone-50">
           <NavLink className={({ isActive }) =>
@@ -23,8 +23,8 @@ function Nav() {
             : "text-stone-200"
         } to="/add-tourist-spot">Add Tourist Spot</NavLink>
         </ul>
-      </div>
-      
+      </div>  
+      {/* navbar center */}
       <div className=" navbar-start md:px-0 lg:navbar-center flex w-[60%] items-center justify-center lg:mr-10">
         <div className="dropdown text-stone-300">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -72,6 +72,7 @@ function Nav() {
 
         </div>
       </div>
+      {/* navbar end */}
       <div className=" space-x-2 lg:space-x-5 *:font-bold">
         <NavLink className={({ isActive }) =>
           isActive
