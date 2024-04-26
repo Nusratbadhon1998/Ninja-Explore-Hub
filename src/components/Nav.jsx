@@ -6,8 +6,10 @@ import { AuthContext } from "../providers/AuthProvider";
 
 function Nav() {
   const { user, logOut } = useContext(AuthContext);
+  
   const [displayName, setDisplayName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
+  console.log(user)
 
   useEffect(() => {
     if (user) {

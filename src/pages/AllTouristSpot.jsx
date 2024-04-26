@@ -1,8 +1,11 @@
 import React from 'react'
+import { useLoaderData } from 'react-router-dom'
 
 function AllTouristSpot() {
+
+  const data = useLoaderData()
   return (
-    <div>AllTouristSpot</div>
+    <div>AllTouristSpot:{data.length}</div>
   )
 }
 

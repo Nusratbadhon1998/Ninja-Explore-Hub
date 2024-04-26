@@ -2,10 +2,10 @@ import React from 'react'
 import Nav from '../components/Nav'
 import { Outlet } from 'react-router-dom'
 import Footer from '../components/Footer'
-
+// bg-[#e5e8ee]
 function MainLayout() {
   return (
-    <div className='bg-[#e5e8ee]'>
+    <div className='bg-[#f2e8e3]'>
         <div className='max-w-7xl mx-auto'>
         <Nav></Nav>
 

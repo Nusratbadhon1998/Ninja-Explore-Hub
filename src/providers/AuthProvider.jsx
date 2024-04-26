@@ -60,7 +60,7 @@ function AuthProvider({ children }) {
   };
   //Sign Out
   const logOut = () => {
-    setLoading(false)
+    setLoading(false);
     setUser(null);
     return signOut(auth);
   };
