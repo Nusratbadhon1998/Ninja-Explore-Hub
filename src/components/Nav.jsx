@@ -1,8 +1,20 @@
 import { SlPlane } from "react-icons/sl";
 import { NavLink } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 function Nav() {
+  const { user, logOut } = useContext(AuthContext);
+  const [displayName, setDisplayName] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
+
+  useEffect(() => {
+    if (user) {
+      setDisplayName(user.displayName || "");
+      setPhotoURL(user.photoURL || "");
+    }
+  }, [user]);
   return (
     <nav className="flex justify-around items-center px-1 md:px-5 lg:px-7 pt-5 bg-stone-800 py-5">
       {/* Navbar start */}
@@ -91,30 +103,53 @@ function Nav() {
       </div>
       {/* navbar end */}
       <div className="*:font-bold flex items-center justify-between gap-3">
-        
-        <FaRegUser className="w-5 h-5 text-stone-300" />
+        {user ? (
+          <>
+            <div
+              className="tooltip tooltip-bottom mr-5"
+              data-tip={displayName || "User Name not found"}
+            >
+              <img
+                alt=""
+                className="w-10 h-10 rounded-full ring-2 ring-offset-4 bg-[#fc6736] ring-[#fc6736]ring-offset-gray-100"
+                src={
+                  photoURL ||
+                  "https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"
+                }
+              />
+            </div>
 
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-stone-300 border-b border-stone-300 pb-1"
-              : "text-stone-200"
-          }
-          to="/login"
-        >
-          Login
-        </NavLink>
-        <p className="font-semibold text-stone-300">/</p>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-stone-300 border-b border-stone-300 pb-1"
-              : "text-stone-200"
-          }
-          to="/register"
-        >
-          Register
-        </NavLink>
+            <button onClick={logOut} className="text-stone-300">
+              LogOut
+            </button>
+          </>
+        ) : (
+          <div className="*:font-bold flex items-center justify-between gap-3">
+            <FaRegUser className="w-5 h-5 text-stone-300" />
+
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-stone-300 border-b border-stone-300 pb-1"
+                  : "text-stone-200"
+              }
+              to="/login"
+            >
+              Login
+            </NavLink>
+            <p className="font-semibold text-stone-300">/</p>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-stone-300 border-b border-stone-300 pb-1"
+                  : "text-stone-200"
+              }
+              to="/register"
+            >
+              Register
+            </NavLink>
+          </div>
+        )}
       </div>
     </nav>
   );

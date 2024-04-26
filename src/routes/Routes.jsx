@@ -5,6 +5,7 @@ import AllTouristSpot from "../pages/AllTouristSpot";
 import AddTouristSpot from "../pages/AddTouristSpot";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -17,11 +18,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/all-tourist-spot",
-        element: <AllTouristSpot/>,
+        element: <PrivateRoute><AllTouristSpot/></PrivateRoute>
       },
       {
         path: "/add-tourist-spot",
-        element: <AddTouristSpot/>,
+        element: <PrivateRoute><AddTouristSpot/></PrivateRoute>
       },
       {
         path: "/login",

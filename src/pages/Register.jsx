@@ -1,11 +1,58 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import video from "../assets/register.mp4";
 import { HiOutlineEyeOff } from "react-icons/hi";
 import { HiOutlineEye } from "react-icons/hi";
+import { AuthContext } from "../providers/AuthProvider";
 
 function Register() {
   const [showPass, setShowPass] = useState(false);
+  const { user, setUser, createUser, updateUserProfile, logOut } =
+    useContext(AuthContext);
+  // Error show
+  const [error, setError] = useState(null);
+  // success
+  const [success, setSuccess] = useState(null);
+  // for password validation
+  const uppercaseRegex = /[A-Z]/;
+  const lowercaseRegex = /[a-z]/;
+  const minSixCharsRegex = /^.{6,}$/;
+
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    // Clearing the error and success message
+    setError("");
+    setSuccess("");
+
+    const form = e.target;
+    const userName = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    console.log(userName, email, photo, password);
+
+    if (!uppercaseRegex.test(password)) {
+      setError("Password should contain at-least one uppercase");
+      return;
+    } else if (!lowercaseRegex.test(password)) {
+      setError("Password should contain at-least one lowercase");
+      return;
+    } else if (!minSixCharsRegex.test(password)) {
+      setError("Password should at-least 6 char");
+      return;
+    }
+
+    createUser(email, password).then(
+      alert("Success"),
+      updateUserProfile(userName, photo)
+        .then(
+          setUser({ email: email, displayName: userName, photoURL: photo })        )
+        .catch((err) => console.log(err.message))
+    );
+  };
   return (
     <div className="flex flex-col md:flex-row lg:flex-row">
       <div className="w-full  md:w-[75%] lg:w-[80%] min-h-screen relative">
@@ -29,7 +76,7 @@ function Register() {
         className=" w-full md:w-[55%] lg:w-[45%] p-8 space-y-3 rounded-xl bg-stone-100 text-stone-700 "
       >
         <h1 className="text-2xl font-bold text-center">Register</h1>
-        <form noValidate="" action="" className="space-y-6">
+        <form onSubmit={handleRegister} className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="Name" className="block text-gray-600 font-bold">
               Username
@@ -68,15 +115,23 @@ function Register() {
               Password
             </label>
             <input
-              type={showPass? "text":"password"}
+              type={showPass ? "text" : "password"}
               name="password"
               id="password"
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-stone-800 focus:border-violet-600 "
             />
-            <div className="absolute right-3 bottom-4" onClick={() => setShowPass(!showPass)}>
-              {showPass ? <HiOutlineEye /> : <HiOutlineEyeOff />    }
+            <div
+              className="absolute right-3 bottom-4"
+              onClick={() => setShowPass(!showPass)}
+            >
+              {showPass ? <HiOutlineEye /> : <HiOutlineEyeOff />}
             </div>
+            {error && (
+              <small className="font-semibold mt-12 text-left text-red-500">
+                {error}
+              </small>
+            )}
           </div>
 
           <input
