@@ -4,6 +4,7 @@ import video from "../assets/register.mp4";
 import { HiOutlineEyeOff } from "react-icons/hi";
 import { HiOutlineEye } from "react-icons/hi";
 import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 function Register() {
   const [showPass, setShowPass] = useState(false);
@@ -20,7 +21,7 @@ function Register() {
 
   const navigate = useNavigate();
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     // Clearing the error and success message
@@ -33,25 +34,72 @@ function Register() {
     const photo = form.photo.value;
     const password = form.password.value;
     console.log(userName, email, photo, password);
+    try {
+      if (!uppercaseRegex.test(password)) {
+        toast.error("Password should contain at-least one uppercase", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }),
+          setError("Password should contain at-least one uppercase");
+        return;
+      } else if (!lowercaseRegex.test(password)) {
+        toast.error("Password should contain at-least one lowercase", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          }),
+        setError("Password should contain at-least one lowercase");
+        return;
+      } else if (!minSixCharsRegex.test(password)) {
+        toast.error("Password should at-least 6 char", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          }),
+        setError("Password should at-least 6 char");
+        return;
+      }
 
-    if (!uppercaseRegex.test(password)) {
-      setError("Password should contain at-least one uppercase");
-      return;
-    } else if (!lowercaseRegex.test(password)) {
-      setError("Password should contain at-least one lowercase");
-      return;
-    } else if (!minSixCharsRegex.test(password)) {
-      setError("Password should at-least 6 char");
-      return;
+      await createUser(email, password);
+      toast.success(" Successfully Registered!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      }),
+
+      // Update profile
+      await updateUserProfile(userName, photo);
+
+      // Update local state immediately
+      setUser({ email: email, displayName: userName, photoURL: photo });
+   
+
+      // Navigate after updating profile
+      navigate("/");
+    } catch (error) {
+      console.log(error.message);
     }
-
-    createUser(email, password).then(
-      alert("Success"),
-      updateUserProfile(userName, photo)
-        .then(
-          setUser({ email: email, displayName: userName, photoURL: photo })        )
-        .catch((err) => console.log(err.message))
-    );
   };
   return (
     <div className="flex flex-col md:flex-row lg:flex-row">

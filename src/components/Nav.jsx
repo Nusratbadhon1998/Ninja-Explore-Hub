@@ -16,15 +16,15 @@ function Nav() {
     }
   }, [user]);
   return (
-    <nav className="flex justify-around items-center px-1 md:px-5 lg:px-7 pt-5 bg-stone-800 py-5">
+    <nav className="flex justify-around items-center px-1 md:px-5 lg:px-6 pt-5 mb-6 py-5 ">
       {/* Navbar start */}
-      <div className=" hidden *:font-bold lg:navbar-start lg:block w-0 md:w-0 lg:w-[25%]">
-        <ul className="space-x-5  *:hover:text-stone-50">
+      <div className=" hidden *:font-bold lg:navbar-start lg:block w-0 md:w-0 lg:w-[40%]">
+        <ul className="space-x-5 ">
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "text-stone-300 border-b border-stone-300 pb-1"
-                : "text-stone-200"
+                ? "text-stone-800 border-b border-stone-300 pb-1"
+                : "text-stone-900"
             }
             to="/"
           >
@@ -33,8 +33,8 @@ function Nav() {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "text-stone-300 border-b border-stone-300 pb-1"
-                : "text-stone-200"
+                ? "text-stone-800 border-b border-stone-300 pb-1"
+                : "text-stone-900"
             }
             to="/all-tourist-spot"
           >
@@ -43,8 +43,8 @@ function Nav() {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "text-stone-300 border-b border-stone-300 pb-1"
-                : "text-stone-200"
+                ? "text-stone-800 border-b border-stone-300 pb-1"
+                : "text-stone-900"
             }
             to="/add-tourist-spot"
           >
@@ -53,8 +53,8 @@ function Nav() {
         </ul>
       </div>
       {/* navbar center */}
-      <div className=" navbar-start md:px-0 lg:navbar-center flex w-[60%] items-center justify-center lg:mr-9">
-        <div className="dropdown text-stone-300">
+      <div className=" navbar-start md:px-0 lg:navbar-center flex w-[40%] items-center justify-center lg:mr-8 ">
+        <div className="dropdown text-stone-800">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,14 +95,14 @@ function Nav() {
           </ul>
         </div>
         <div className="flex items-center">
-          <SlPlane className="w-8 h-8  text-stone-100 hidden md:flex lg:flex" />
-          <a className=" text-base lg:text-3xl font-bold text-stone-300">
+          <SlPlane className="w-8 h-8  text-stone-900 hidden md:flex lg:flex" />
+          <a className=" text-base lg:text-3xl font-bold text-stone-800">
             Ninja Explore Hub
           </a>
         </div>
       </div>
       {/* navbar end */}
-      <div className="*:font-bold flex items-center justify-between gap-3">
+      <div className="*:font-bold lg:w-[30%] flex items-center  gap-3">
         {user ? (
           <>
             <div
@@ -119,30 +119,30 @@ function Nav() {
               />
             </div>
 
-            <button onClick={logOut} className="text-stone-300">
+            <button onClick={logOut} className="text-stone-800">
               LogOut
             </button>
           </>
         ) : (
           <div className="*:font-bold flex items-center justify-between gap-3">
-            <FaRegUser className="w-5 h-5 text-stone-300" />
+            <FaRegUser className="w-5 h-5 text-stone-800" />
 
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-stone-300 border-b border-stone-300 pb-1"
-                  : "text-stone-200"
+                  ? "text-stone-800 border-b border-stone-300 pb-1"
+                  : "text-stone-900"
               }
               to="/login"
             >
               Login
             </NavLink>
-            <p className="font-semibold text-stone-300">/</p>
+            <p className="font-semibold text-stone-800">/</p>
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-stone-300 border-b border-stone-300 pb-1"
-                  : "text-stone-200"
+                  ? "text-stone-800 border-b border-stone-300 pb-1"
+                  : "text-stone-900"
               }
               to="/register"
             >

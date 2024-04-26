@@ -5,8 +5,11 @@ import Footer from '../components/Footer'
 
 function MainLayout() {
   return (
-    <div>
+    <div className='bg-[#e5e8ee]'>
+        <div className='max-w-7xl mx-auto'>
         <Nav></Nav>
+
+        </div>
         {/* <div className='min-h-[calc(100vh-378px)]'> */}
 
         <Outlet></Outlet>

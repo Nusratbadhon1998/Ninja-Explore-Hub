@@ -4,29 +4,42 @@ import { HiOutlineEyeOff } from "react-icons/hi";
 import { HiOutlineEye } from "react-icons/hi";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 function Login() {
   const [showPass, setShowPass] = useState(false);
 
-  const { signIn, googleSignIn, gitSignIn ,twitterSignIn} = useContext(AuthContext);
+  const { signIn, googleSignIn, gitSignIn, twitterSignIn } =
+    useContext(AuthContext);
 
   const [error, setError] = useState("");
 
   const location = useLocation();
 
   const navigate = useNavigate();
-  const handleLogin=e=>{
+  const handleLogin = (e) => {
     e.preventDefault();
-    const form =e.target;
-    const email= form.email.value;
-    const password= form.password.value;
-    signIn(email,password)
-    .then(
-        alert("login"),
-        navigate(location?.state ? location.state : "/")
-
-    ).catch(err=>console.log(err.message))
-  }
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    signIn(email, password)
+      .then(
+        navigate(location?.state ? location.state : "/"),
+        toast.success(" Successfully Logged In!", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      )
+      .catch((err) => {
+        setError("Invalid Credential");
+      });
+  };
 
   return (
     <>
@@ -47,7 +60,7 @@ function Login() {
             />
           </video>
         </div>
-
+        {/* Form */}
         <div
           data-aos="fade-left"
           data-aos-offset="200"
@@ -90,6 +103,7 @@ function Login() {
             >
               {showPass ? <HiOutlineEye /> : <HiOutlineEyeOff />}
             </div>
+            {error && <small className="text-red-500 text-left">{error}</small>}
 
             <input
               className="block w-full p-3 text-center rounded-lg text-stone-100 bg-stone-600 hover:bg-stone-500 hover:text-stone-50 font-semibold"
