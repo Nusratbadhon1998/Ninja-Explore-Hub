@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
       {
         path: "/all-tourist-spot",
         element:<AllTouristSpot/>,
-        loader: ()=>fetch('http://localhost:5000/touristSpots')
+        loader: ()=>fetch('https://ninja-explore-hub-server.vercel.app/touristSpots')
       },
       {
         path: "/add-tourist-spot",
