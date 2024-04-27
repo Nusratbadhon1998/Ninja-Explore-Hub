@@ -7,7 +7,7 @@ function Review() {
         <div className="grid items-center gap-4 xl:grid-cols-5">
         
           <div className="relative px-6 py-3 font-bold text-black group max-w-2xl mx-auto my-8 space-y-4 text-center xl:col-span-2 xl:text-left">
-            <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></span>
             <span className="absolute inset-0 w-full h-full border-4 border-black"></span>
             <span className="relative">
               <h2

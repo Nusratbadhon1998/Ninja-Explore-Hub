@@ -10,7 +10,6 @@ function Nav() {
   const [displayName, setDisplayName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
   const [email, setEmail] = useState("");
-  console.log(user)
 
   useEffect(() => {
     if (user) {

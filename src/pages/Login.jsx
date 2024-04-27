@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 function Login() {
   const [showPass, setShowPass] = useState(false);
 
-  const { signIn, googleSignIn, gitSignIn, twitterSignIn } =
+  const { signIn, googleSignIn, gitSignIn,user,setUser } =
     useContext(AuthContext);
 
   const [error, setError] = useState("");
