@@ -9,12 +9,14 @@ function Nav() {
   
   const [displayName, setDisplayName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
+  const [email, setEmail] = useState("");
   console.log(user)
 
   useEffect(() => {
     if (user) {
       setDisplayName(user.displayName || "");
       setPhotoURL(user.photoURL || "");
+      setEmail(user.email ||"abc@gmail.com")
     }
   }, [user]);
   return (
@@ -51,6 +53,16 @@ function Nav() {
             to="/add-tourist-spot"
           >
             Add Tourist Spot
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "text-stone-800 border-b border-stone-300 pb-1"
+                : "text-stone-900"
+            }
+            to={`/lists/${email}`}
+          >
+            My list
           </NavLink>
         </ul>
       </div>

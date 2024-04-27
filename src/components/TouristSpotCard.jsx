@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function TouristSpotCard({ info }) {
  
@@ -27,7 +28,7 @@ function TouristSpotCard({ info }) {
           <div className="badge badge-outline">{avgCost}</div>
           <div className="badge badge-outline">{totalVisitor}</div>
           <div className="badge badge-outline">{travelTime}</div>
-          <button className="btn btn-primary">View Details</button>
+          <Link to={`/tourist-spot-details/${_id}`} className="btn btn-primary">View Details</Link>
 
         </div>
       </div>

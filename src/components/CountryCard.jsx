@@ -1,6 +1,9 @@
+import axios from 'axios'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CountryCard({country}) {
+
     const {country_name,image,description}= country
   return (
     <div className="card w-96 bg-stone-200 shadow-xl">
@@ -10,7 +13,7 @@ function CountryCard({country}) {
     <div className="card-body items-center text-center">
       <h2 className="card-title">{country_name}</h2>
       <div className="card-actions">
-        <button className="btn btn-primary"> View More</button>
+       <Link to={`/countries/${country_name}`}>View details</Link>
       </div>
     </div>
   </div>
