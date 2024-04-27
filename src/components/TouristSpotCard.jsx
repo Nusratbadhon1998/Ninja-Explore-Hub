@@ -1,6 +1,7 @@
 import React from "react";
 
 function TouristSpotCard({ info }) {
+ 
   const {
     _id,
     spotName,
@@ -13,7 +14,7 @@ function TouristSpotCard({ info }) {
  
   return (
     <div>
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-[90%] md:w-[60%] lg:w-96 mx-auto bg-base-100 shadow-xl">
       <figure>
         <img className="aspect-[3/2]" src={image} alt="Shoes" />
       </figure>

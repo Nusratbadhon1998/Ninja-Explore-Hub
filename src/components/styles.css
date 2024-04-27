@@ -1,10 +1,10 @@
 
-.swiper {
+ .swiper {
     width: 30%;
     height: 100%;
   }
   
-.mySwiper{
+    .mySwiper{
     width: full;
     height: 100%;
 
@@ -20,7 +20,7 @@
     align-items: center;
   }
   
-  .swiper-slide img {
+    .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
@@ -32,11 +32,11 @@
   /* Responsive */
 
   @media screen and (min-width: 320px) and (max-width:950px) {
-    .swiper {
+       .swiper {
       width: full;
       height: 100%;
     }
-    .mySwiper{
+       .mySwiper{
       width: full;
       height: 100%;
   

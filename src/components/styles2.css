@@ -1,0 +1,27 @@
+/* Default styles */
+.second-swiper .swiper {
+  width: 100%;
+}
+
+.second-swiper .swiper-slide {
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 320px) {
+  .second-swiper .swiper {
+    display: none;
+  }
+
+  .second-swiper .swiper-slide {
+    display: none; 
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 991px) {
+  .second-swiper .swiper {
+    display: none;
+  }
+  .second-swiper .swiper-slide {
+    display: none;
+  }
+}

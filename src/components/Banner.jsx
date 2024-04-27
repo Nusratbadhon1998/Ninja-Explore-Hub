@@ -48,7 +48,7 @@ function Banner() {
         clickable: true,
       }}
       modules={[Autoplay, Pagination]}
-      className="mySwiper "
+      className="mySwiper"
     >
       <SwiperSlide>
         <img
