@@ -6,11 +6,12 @@ import Footer from "../components/Footer";
 // eeeedd
 function MainLayout() {
   return (
-    <div className="relative dark:text-white text-stone-100 .dark\:underline ">
-      <div className="">
+    <div className="relative bg-[#160830] text-stone-100 .dark\:underline ">
+      
+      <div class="relative bg-gradient-to-br from-[#160830] via-[#160830] to-[#160830]">
         <Nav></Nav>
       </div>
-      {/* <div className='min-h-[calc(100vh-378px)]'> */}
+
       <div>
         <Outlet></Outlet>
       </div>

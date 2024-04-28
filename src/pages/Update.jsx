@@ -6,9 +6,9 @@ import { useParams } from "react-router-dom";
 function Update() {
   const { id } = useParams();
   const submitCss =
-    "block w-full p-3 text-center rounded-lg text-stone-100 bg-[#292524] hover:bg-stone-700 hover:text-stone-50 font-semibold mt-4";
+    "block w-full p-3 text-center rounded-lg  text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f]  font-semibold mt-4";
 
-  const labelCss = "block text-stone-900 font-semibold text-base";
+  const labelCss = "block text-stone-100 font-semibold text-base";
 
   const inputCss =
     "input w-full max-w-xs placeholder:text-sm placeholder:font-semibold placeholder:text-stone-500";
@@ -58,7 +58,7 @@ function Update() {
   return (
     <div className="bg-[url(https://blush.design/api/download?shareUri=aZhNm7MrStKsvxDp&c=Bottom_0%7E342a83_Hair_0%7E2c1b18_Skin_0%7Edcae92_Top_0%7Eff4133&w=800&h=800&fm=png)] bg-opacity-50 bg-no-repeat bg-right">
       <div className="w-3/4 mx-auto my-12">
-        <h1 className="text-stone-800 font-bold text-center my-8 text-4xl">
+        <h1 className="text-stone-100 font-bold text-center my-8 text-4xl">
           <Typewriter
             cursor
             cursorBlinking
@@ -89,13 +89,17 @@ function Update() {
               {/* Country name */}
               <div>
                 <label className={labelCss}>Country Name</label>
-                <input
-                  type="text"
-                  name="country"
-                  placeholder="Country"
-                  className={inputCss}
-                  required
-                />
+                <select className="text-stone-500 input w-full max-w-xs" name="country">
+                  <option className="text-stone-500" value="">
+                    --Please Select Country--
+                  </option>
+                  <option  className="text-stone-500" value="France">France</option>
+                  <option  className="text-stone-500"value="Italy">Italy</option>
+                  <option  className="text-stone-500"value="Spain">Spain</option>
+                  <option  className="text-stone-500"value="England">England</option>
+                  <option  className="text-stone-500"value="Netherlands">Netherlands</option>
+                  <option  className="text-stone-500"value="Switzerland">Switzerland</option>
+                </select>
               </div>
               {/* Location */}
               <div>
@@ -113,7 +117,7 @@ function Update() {
                 <label className={labelCss}>Average Cost</label>
                 <input
                   name="cost"
-                  type="number"
+                  type="text"
                   placeholder="Avg Cost"
                   className={inputCss}
                   required
@@ -135,7 +139,7 @@ function Update() {
                 <label className={labelCss}>Total Visitors Per Year</label>
                 <input
                   name="totalVisitor"
-                  type="number"
+                  type="text"
                   placeholder="Total Visit"
                   className={inputCss}
                   required
@@ -148,7 +152,7 @@ function Update() {
                   Photo Url
                 </label>
                 <div className="flex">
-                  <span className="flex items-center px-3 pointer-events-none sm:text-sm rounded-l-md bg-stone-700 text-stone-50 ">
+                  <span className="flex items-center px-3 pointer-events-none sm:text-sm rounded-l-md  text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f]  ">
                     https://
                   </span>
                   <input
@@ -163,26 +167,28 @@ function Update() {
               </fieldset>
               {/* Seasonality */}
               <div className="block w-full">
-                <label className=" text-stone-900 font-semibold text-base">
+                <label className=" text-stone-100 font-semibold text-base">
                   Seasonality:{" "}
                 </label>
                 <input
                   required
-                  className="text-stone-50 font-bold"
+                  className="text-[#6a0da4] font-bold"
                   type="radio"
                   name="seasonality"
                   value="Summer"
                 />
-                <label className="text-stone-800 font-medium mx-4" htmlFor="html">
+                <label className="text-stone-100 font-medium mx-4" htmlFor="html">
                   Summer
                 </label>
                 <input
                   required
+                  className="text-[#6a0da4] font-bold"
+
                   type="radio"
                   name="seasonality"
                   value="Winter"
                 />
-                <label className="text-stone-800 font-medium mx-4" htmlFor="css">
+                <label className="text-stone-100 font-medium mx-4" htmlFor="css">
                   Winter
                 </label>
               </div>

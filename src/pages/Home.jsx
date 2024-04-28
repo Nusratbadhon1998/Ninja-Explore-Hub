@@ -8,6 +8,7 @@ import Review from "../components/Review";
 import GetInTouch from "../components/GetInTouch";
 import Countries from "../components/Countries";
 import { RingLoader } from "react-spinners";
+import Stats from "../components/Stats";
 
 function Home() {
   const data= useLoaderData()
@@ -37,6 +38,7 @@ function Home() {
       <div>
         <Countries></Countries>
       </div>
+      <Stats></Stats>
       <Review></Review>
       <GetInTouch></GetInTouch>
     </div>

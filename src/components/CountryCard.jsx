@@ -11,10 +11,10 @@ function CountryCard({country}) {
       <img src={image} alt="Shoes" className="rounded-xl aspect-[3/2] w-full bg-cover transform transition duration-300 hover:scale-110" />
     </figure>
     <div className="card-body items-center text-center">
-      <h2 className="card-title font-bold text-2xl">{country_name}</h2>
-      <p className='font-medium text-sm'>{description.slice(0,160)}...</p>
+      <h2 className="card-title text-stone-100 font-bold text-2xl">{country_name}</h2>
+      <p className='font-medium  text-stone-200 text-sm'>{description.slice(0,160)}...</p>
       <div className="card-actions">
-       <Link className='btn outline-none border-none transition transform duration-200 hover:bg-stone-50 hover:text-stone-700 px-4 py-2 bg-[#f3aa4e] text-black' to={`/countries/${country_name}`}>View details</Link>
+       <Link className='btn outline-none border-none transition transform duration-200 hover:bg-stone-50 hover:text-stone-100 px-4 py-2 text-stone-200 bg-gradient-to-r from-[#612bd3] to-[#6e008f]' to={`/countries/${country_name}`}>View details</Link>
       </div>
     </div>
   </div>

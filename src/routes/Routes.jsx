@@ -16,52 +16,73 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader: ()=>fetch('https://ninja-explore-hub-server.vercel.app/touristSpots')
-
-        
+        loader: () =>
+          fetch("https://ninja-explore-hub-server.vercel.app/touristSpots"),
       },
       {
         path: "/all-tourist-spot",
-        element:<AllTouristSpot/>,
-        loader: ()=>fetch('https://ninja-explore-hub-server.vercel.app/touristSpots')
+        element: <AllTouristSpot />,
+        loader: () =>
+          fetch("https://ninja-explore-hub-server.vercel.app/touristSpots"),
       },
       {
         path: "/add-tourist-spot",
-        element: <PrivateRoute><AddTouristSpot/></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <AddTouristSpot />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
-        element: <Login/>,
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Register/>,
+        element: <Register />,
       },
       {
-        path:'/countries/:countryName',
-        element:<CountrySpotList></CountrySpotList>,
-        loader: ({params})=>  fetch(`https://ninja-explore-hub-server.vercel.app/countries/${params.countryName}`)
+        path: "/countries/:countryName",
+        element: <CountrySpotList></CountrySpotList>,
+        loader: ({ params }) =>
+          fetch(
+            `https://ninja-explore-hub-server.vercel.app/countries/${params.countryName}`
+          ),
       },
       {
-        path:'/tourist-spot-details/:id',
-        element:<TourDetails></TourDetails>,
-        loader:({params})=>fetch(`https://ninja-explore-hub-server.vercel.app/touristSpotsDetails/${params.id}`)
+        path: "/tourist-spot-details/:id",
+        element: (
+          <PrivateRoute>
+            <TourDetails></TourDetails>
+          </PrivateRoute>
+        ),
+        // loader: ({ params }) =>
+        //   fetch(
+        //     `https://ninja-explore-hub-server.vercel.app/touristSpotsDetails/${params.id}`
+        //   ),
       },
       {
-        path:'/lists',
-        element:<PrivateRoute><MyList></MyList></PrivateRoute>,
+        path: "/lists",
+        element: (
+          <PrivateRoute>
+            <MyList></MyList>
+          </PrivateRoute>
+        ),
         // loader:({params})=>fetch(`https://ninja-explore-hub-server.vercel.app/myLists/${params.email}`)
       },
       {
-        path:"/update/:id",
-        element:<Update></Update>
-      }
-
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

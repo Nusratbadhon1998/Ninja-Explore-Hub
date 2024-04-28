@@ -10,13 +10,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from '@tanstack/react-query'
 
-const queryClient = new QueryClient()
 
 // ..
 AOS.init();
@@ -25,9 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <AuthProvider>
       <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
       <RouterProvider router={router}></RouterProvider>
-      </QueryClientProvider>
       <ToastContainer />
 
     </HelmetProvider>

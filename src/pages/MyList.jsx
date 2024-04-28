@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import useData from "../hooks/useData";
 import {  ClimbingBoxLoader } from "react-spinners";
 import NoData from "../components/NoData";
 
@@ -73,9 +72,9 @@ function MyList() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center border min-h-[400px]">
+      <div className="flex justify-center items-center  min-h-[400px]">
         <ClimbingBoxLoader
-          color="#292524"
+          color="#6323c6"
           loading={loading}
           size={20}
           speedMultiplier={1}
@@ -91,9 +90,9 @@ function MyList() {
 
   return (
     <div className="overflow-x-auto min-h-96 my-20 max-w-6xl mx-auto">
-      <table className="table text-stone-800">
+      <table className="table text-stone-100 font-semibold">
         {/* head */}
-        <thead>
+        <thead className="text-stone-100">
           <tr>
             <th></th>
             <th>Tour Spot Name</th>
@@ -127,16 +126,16 @@ function MyList() {
               <td>{d.avgCost}</td>
               <td>{d.travelTime}</td>
               <th>
-                <Link to={`/update/${d._id}`} className="btn btn-ghost btn-xs">
+                <Link to={`/update/${d._id}`} className="btn text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f] ">
                   Update
                 </Link>
               </th>
               <th>
                 <button
                   onClick={() => handleDelete(d._id)}
-                  className="btn btn-ghost btn-xs"
+                  className="btn text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f] "
                 >
-                  delete
+                  Delete
                 </button>
               </th>
             </tr>

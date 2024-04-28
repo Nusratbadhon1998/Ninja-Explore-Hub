@@ -40,16 +40,16 @@ function Nav() {
       <div className=" hidden *:font-bold lg:navbar-start lg:block w-0 md:w-0 lg:w-[40%]">
         <ul
           className={`space-x-5 ${
-            theme === "dark" ? "text-white" : "text-black"
+            theme === "dark" ? "text-white" : "text-stone-100"
           }`}
         >
           <NavLink
             className={({ isActive }) =>
               isActive
                 ? `${
-                    theme === "dark" ? "text-stone-100" : "text-stone-900"
+                    theme === "dark" ? "text-stone-100" : "text-stone-50"
                   } border-b border-stone-300 pb-1`
-                : `${theme === "dark" ? "text-white" : "text-black"}`
+                : `${theme === "dark" ? "text-white" : "text-stone-100"}`
             }
             to="/"
           >
@@ -59,9 +59,9 @@ function Nav() {
             className={({ isActive }) =>
               isActive
                 ? `${
-                    theme === "dark" ? "text-stone-100" : "text-stone-900"
+                    theme === "dark" ? "text-stone-100" : "text-stone-50"
                   } border-b border-stone-300 pb-1`
-                : `${theme === "dark" ? "text-white" : "text-black"}`
+                : `${theme === "dark" ? "text-white" : "text-stone-100"}`
             }
             to="/all-tourist-spot"
           >
@@ -71,9 +71,9 @@ function Nav() {
             className={({ isActive }) =>
               isActive
                 ? `${
-                    theme === "dark" ? "text-stone-100" : "text-stone-900"
+                    theme === "dark" ? "text-stone-100" : "text-stone-50"
                   } border-b border-stone-300 pb-1`
-                : `${theme === "dark" ? "text-white" : "text-black"}`
+                : `${theme === "dark" ? "text-white" : "text-stone-100"}`
             }
             to="/add-tourist-spot"
           >
@@ -83,9 +83,9 @@ function Nav() {
             className={({ isActive }) =>
               isActive
                 ? `${
-                    theme === "dark" ? "text-stone-100" : "text-stone-900"
+                    theme === "dark" ? "text-stone-100" : "text-stone-50"
                   } border-b border-stone-300 pb-1`
-                : `${theme === "dark" ? "text-white" : "text-black"}`
+                : `${theme === "dark" ? "text-white" : "text-stone-100"}`
             }
             to={`/lists`}
           >
@@ -126,8 +126,8 @@ function Nav() {
           </ul>
         </div>
         <div className="flex items-center">
-          <SlPlane className={`w-8 h-8  ${theme === "dark" ? "text-white" : "text-stone-800"} hidden md:flex lg:flex`} />
-          <a className={ `lg:text-3xl font-bold ${theme === "dark" ? "text-white" : "text-stone-800"} `}>
+          <SlPlane className={`w-8 h-8  ${theme === "dark" ? "text-white" : "text-stone-100"} hidden md:flex lg:flex`} />
+          <a className={ `lg:text-3xl font-bold ${theme === "dark" ? "text-white" : "text-stone-100"} `}>
             Ninja Explore Hub
           </a>
         </div>
@@ -143,7 +143,7 @@ function Nav() {
           />
           {/* sun icon */}
           <svg
-            className="swap-off fill-black w-8 h-8"
+            className="swap-off fill-white w-8 h-8"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -151,7 +151,7 @@ function Nav() {
           </svg>
           {/* moon icon */}
           <svg
-            className="swap-on fill-black w-8 h-8"
+            className="swap-on fill-white w-8 h-8"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -174,21 +174,21 @@ function Nav() {
               />
             </div>
 
-            <button onClick={logOut} className={` ${theme === "dark" ? "text-white" : "text-stone-800"}`}>
+            <button onClick={logOut} className={` ${theme === "dark" ? "text-white" : "text-stone-100"}`}>
               LogOut
             </button>
           </>
         ) : (
           <div className="*:font-bold flex items-center justify-between gap-3">
-            <FaRegUser className={`w-5 h-5 ${theme === "dark" ? "text-white" : "text-stone-800"}`} />
+            <FaRegUser className={`w-5 h-5 ${theme === "dark" ? "text-white" : "text-stone-100"}`} />
 
             <NavLink
               className={({ isActive }) =>
               isActive
               ? `${
-                  theme === "dark" ? "text-stone-100" : "text-stone-900"
+                  theme === "dark" ? "text-stone-100" : "text-stone-50"
                 } border-b border-stone-300 pb-1`
-              : `${theme === "dark" ? "text-white" : "text-black"}`
+              : `${theme === "dark" ? "text-white" : "text-stone-100"}`
               }
               to="/login"
             >
@@ -199,9 +199,9 @@ function Nav() {
               className={({ isActive }) =>
                 isActive
                 ? `${
-                    theme === "dark" ? "text-stone-100" : "text-stone-900"
+                    theme === "dark" ? "text-stone-100" : "text-stone-50"
                   } border-b border-stone-300 pb-1`
-                : `${theme === "dark" ? "text-white" : "text-black"}`
+                : `${theme === "dark" ? "text-white" : "text-stone-100"}`
               }
               to="/register"
             >

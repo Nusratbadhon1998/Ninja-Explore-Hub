@@ -3,7 +3,7 @@ import { SlPlane } from "react-icons/sl";
 function Footer() {
   return (
     <footer
-      className=" relative footer footer-center p-10 bg-stone-900 text-stone-300  rounded"
+      className=" relative footer footer-center p-10 bg-[#110726] text-stone-300  rounded"
     >
       <div className="absolute right-0 bottom-0">
         <img
