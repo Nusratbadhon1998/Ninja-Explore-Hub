@@ -22,7 +22,7 @@ function AddTouristSpot() {
   const labelCss = "block text-stone-300 font-semibold text-base ";
 
   const inputCss =
-    "input w-full defaultValue:text-stone-800  max-w-xs placeholder:text-sm placeholder:font-semibold placeholder:text-stone-500";
+    "input w-full defaultValue:text-stone-800 md:max-w-lg  lg:max-w-xs placeholder:text-sm placeholder:font-semibold placeholder:text-stone-500 text-stone-500";
 
   const handleAddSpot = (e) => {
     e.preventDefault();
@@ -79,7 +79,7 @@ function AddTouristSpot() {
         </h1>
       </div>
 
-      <div className="w-[60%] mx-auto bg-stone-400 bg-opacity-35 rounded-lg p-5 mb-4">
+      <div className="w-full lg:w-[60%] mx-auto bg-stone-400 bg-opacity-35 rounded-lg p-5 mb-4">
         <div className="p-3 m-3 ">
           <form onSubmit={handleAddSpot}>
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-3 full mx-auto">

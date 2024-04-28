@@ -45,7 +45,7 @@ function TouristSpotsContainer({ data }) {
           ))}
         </Swiper>
 
-        <div className="grid grid-cols-1 lg:hidden">
+        <div className="grid grid-cols-1 gap-4 lg:hidden">
           {touristSpots.slice(0, 5).map((spot) => (
             <TouristSpotCard key={spot._id} info={spot}></TouristSpotCard>
           ))}

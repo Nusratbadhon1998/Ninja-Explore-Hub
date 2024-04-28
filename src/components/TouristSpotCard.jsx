@@ -51,7 +51,7 @@ function TouristSpotCard({ info }) {
               </div>
             </div>
           </div>
-          <div className="card-actions w-full justify-center">
+          <div className="card-actions w-full justify-centerx">
             <Link
               to={`/tourist-spot-details/${_id}`}
               className="btn text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f] "

@@ -54,7 +54,7 @@ function Countries() {
         data-aos-duration="1000"
         
       >
-        <div className="col-span-2 ">
+        <div className="lg:col-span-2 ">
           <CountryCard
             country={countries[0]}
             key={countries[0]._id}
@@ -90,7 +90,7 @@ function Countries() {
             key={countries[5]._id}
           ></CountryCard>
         </div>
-        <div className="col-span-2">
+        <div className="lg:col-span-2">
           <CountryCard
             country={countries[6]}
             key={countries[6]._id}

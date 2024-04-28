@@ -11,7 +11,7 @@ function Update() {
   const labelCss = "block text-stone-100 font-semibold text-base";
 
   const inputCss =
-    "input w-full max-w-xs placeholder:text-sm placeholder:font-semibold placeholder:text-stone-500";
+    "input w-full text-stone-500 md:max-w-lg lg:max-w-xs placeholder:text-sm placeholder:font-semibold placeholder:text-stone-500";
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -39,7 +39,7 @@ function Update() {
     };
     console.log(info);
 
-    fetch(`http://localhost:5000/touristSpots/${id}`, {
+    fetch(`https://ninja-explore-hub-server.vercel.app/touristSpots/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -71,7 +71,7 @@ function Update() {
         </h1>
       </div>
 
-      <div className="w-[60%] mx-auto bg-stone-400 bg-opacity-35 rounded-lg p-5 mb-4">
+      <div className="w-full lg:w-[60%] mx-auto bg-stone-400 bg-opacity-35 rounded-lg p-5 mb-4">
         <div className="p-3 m-3 ">
           <form onSubmit={handleUpdate}>
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-3 full mx-auto">
@@ -89,7 +89,7 @@ function Update() {
               {/* Country name */}
               <div>
                 <label className={labelCss}>Country Name</label>
-                <select className="text-stone-500 input w-full max-w-xs" name="country">
+                <select className="text-stone-500 input w-full max-w-xs" name="country" required>
                   <option className="text-stone-500" value="">
                     --Please Select Country--
                   </option>
@@ -197,7 +197,7 @@ function Update() {
                 <label className={labelCss}>Short description</label>
                 <textarea
                   required
-                  className="block w-full"
+                  className="block w-full  text-stone-500"
                   name="desc"
                   id=""
                   cols="20"

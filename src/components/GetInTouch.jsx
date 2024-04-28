@@ -10,7 +10,7 @@ function GetInTouch() {
         alt=""
       />
       <div className="max-w-6xl relative z-10 mx-auto flex flex-col justify-center items-center bg-[#2b2739] bg-opacity-70 p-3 lg:p-40  rounded-2xl space-y-5" data-aos="fade-up" data-aos-duration="1000">
-        <h1 className="text-4xl font-bold text-stone-100">
+        <h1 className="text-4xl font-bold text-stone-100 text-center">
           Trusted By People Around the world
         </h1>
         <p className="text-center text-stone-300 mb-20">
@@ -19,7 +19,7 @@ function GetInTouch() {
           customer satisfaction, we have earned the trust and loyalty of
           travelers, adventurers, and explorers worldwide.
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-col lg:flex-row gap-4">
           <label className="input input-bordered flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"

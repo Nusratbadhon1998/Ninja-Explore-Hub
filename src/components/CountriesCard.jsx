@@ -20,9 +20,9 @@ function CountriesCard({ info }) {
     return (
       <div className="w-full">
         <div className="card flex flex-col h-full w-full md:w-[90%] lg:w-[60%] xl:w-96 mx-auto bg-[#2b2739] text-stone-100 shadow-xl">
-          <figure>
+          {/* <figure>
             <img className="aspect-[3/2]" src={image} alt="Shoes" />
-          </figure>
+          </figure> */}
           <div className="card-body space-y-3 flex-grow">
             <h2 className="card-title">
               {spotName}
