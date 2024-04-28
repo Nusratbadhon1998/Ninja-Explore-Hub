@@ -91,7 +91,7 @@ function MyList() {
 
   return (
     <div className="overflow-x-auto min-h-96 my-20 max-w-6xl mx-auto">
-      <table className="table">
+      <table className="table text-stone-800">
         {/* head */}
         <thead>
           <tr>

@@ -6,7 +6,7 @@ function CountryCard({country}) {
 
     const {country_name,image,description}= country
   return (
-    <div className="card w-full h-full *:text-white  image-full  shadow-xl hover:scale-95 transition transform ease-in duration-300">
+    <div className="card w-full h-full *:text-white  image-full  shadow-xl hover:cursor-pointer hover:scale-95 transition transform ease-in duration-300">
     <figure className="">
       <img src={image} alt="Shoes" className="rounded-xl aspect-[3/2] w-full bg-cover transform transition duration-300 hover:scale-110" />
     </figure>

@@ -6,13 +6,15 @@ import Footer from "../components/Footer";
 // eeeedd
 function MainLayout() {
   return (
-    <div className="relative text-stone-100">
-      <div className="max-w-7xl mx-auto">
+    <div className="relative dark:text-white text-stone-100 .dark\:underline ">
+      <div className="">
         <Nav></Nav>
       </div>
       {/* <div className='min-h-[calc(100vh-378px)]'> */}
+      <div>
+        <Outlet></Outlet>
+      </div>
 
-      <Outlet></Outlet>
       {/* </div> */}
       <Footer></Footer>
     </div>
