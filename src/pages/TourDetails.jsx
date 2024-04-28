@@ -3,6 +3,19 @@ import { useLoaderData } from "react-router-dom";
 
 function TourDetails() {
   const data = useLoaderData();
+  if (!data){
+    return (
+      <div className="flex justify-center items-center border min-h-[400px]">
+        <RingLoader
+          color="#0c2d57"
+          loading={loading}
+          size={100}
+          speedMultiplier={1}
+        />
+      </div>
+    );
+  
+   }
  
 
   const {

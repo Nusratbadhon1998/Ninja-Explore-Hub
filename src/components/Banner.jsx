@@ -10,7 +10,7 @@ import './styles.css'
 import { Autoplay, Pagination } from "swiper/modules";
 function Banner() {
   return (
-    <div className="flex flex-col md:flex-col lg:flex-row gap-5 items-center w-full h-[500px] bg-[#f2e8e2]">
+    <div className="flex flex-col md:flex-col lg:flex-row gap-5 items-center w-full h-[500px] bg-base">
         {/* First Part */}
     <div className="w-full md:w-full lg:w-1/3 space-y-3 ml-8">
       <h1 className="text-xl text-stone-800 md:text-3xl lg:text-5xl font-bold">

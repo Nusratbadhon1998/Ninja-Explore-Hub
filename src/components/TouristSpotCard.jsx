@@ -15,7 +15,7 @@ function TouristSpotCard({ info }) {
  
   return (
     <div>
-        <div className="card w-[90%] md:w-[60%] lg:w-96 mx-auto bg-base-100 shadow-xl">
+        <div className="card w-[90%] md:w-[60%] lg:w-96 mx-auto bg-stone-200 text-stone-900 shadow-xl">
       <figure>
         <img className="aspect-[3/2]" src={image} alt="Shoes" />
       </figure>
@@ -28,7 +28,7 @@ function TouristSpotCard({ info }) {
           <div className="badge badge-outline">{avgCost}</div>
           <div className="badge badge-outline">{totalVisitor}</div>
           <div className="badge badge-outline">{travelTime}</div>
-          <Link to={`/tourist-spot-details/${_id}`} className="btn btn-primary">View Details</Link>
+          <Link to={`/tourist-spot-details/${_id}`} className="btn bg-[#f3aa4e]">View Details</Link>
 
         </div>
       </div>

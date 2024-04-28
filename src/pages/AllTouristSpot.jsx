@@ -1,16 +1,40 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import TouristSpotCard from "../components/TouristSpotCard";
+import { RingLoader } from "react-spinners";
 
 function AllTouristSpot() {
+  
   const data = useLoaderData();
+  if (!data){
+    return (
+      <div className="flex justify-center items-center border min-h-[400px]">
+        <RingLoader
+          color="#0c2d57"
+          loading={loading}
+          size={100}
+          speedMultiplier={1}
+        />
+      </div>
+    );
+  
+   }
+ 
   const [allSpots, setAllSpots] = useState(data);
   const handleSort = (asc) => {
     if (asc) {
-      const sortedSpots = [...allSpots].sort((a, b) => a.avgCost - b.avgCost);
+      const sortedSpots = [...allSpots].sort((a, b) =>{
+        const aCost=  a.avgCost.slice(0,a.avgCost.length-1)
+        const bCost= b.avgCost.slice(0,b.avgCost.length-1)
+        return (aCost-bCost)
+      });
       setAllSpots(sortedSpots);
     } else {
-      const sortedSpots = [...allSpots].sort((a, b) => b.avgCost - a.avgCost);
+      const sortedSpots = [...allSpots].sort((a, b) => {
+        const aCost=  a.avgCost.slice(0,a.avgCost.length-1)
+        const bCost= b.avgCost.slice(0,b.avgCost.length-1)
+        return (bCost-aCost)
+      });
       setAllSpots(sortedSpots);
     }
   };

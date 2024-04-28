@@ -3,11 +3,25 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useData from "../hooks/useData";
+import {  ClimbingBoxLoader } from "react-spinners";
+import NoData from "../components/NoData";
 
 function MyList() {
-  const data = useLoaderData();
-  const [lists,setLists]=useState(data)
+  // const { data, isLoading, refetch } = useData();
 
+  const {user}=useContext(AuthContext)
+  const [lists,setLists]=useState([])
+  const [loading,setLoading] = useState(true)
+
+  useEffect(()=>{
+    axios.get(`https://ninja-explore-hub-server.vercel.app/myLists/${user.email}`)
+      .then(data=>{
+        setLists(data.data)
+        setLoading(false)
+      })
+
+  },[user])
 
   const handleDelete = (id) => {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -30,25 +44,24 @@ function MyList() {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/touristSpots/${id}`, {
-            method: "DELETE",
-          })
-          .then(res=>res.json)
-          .then(data=>{
-           console.log(data)
-          })
+          fetch(
+            `https://ninja-explore-hub-server.vercel.app/touristSpots/${id}`,
+            {
+              method: "DELETE",
+            }
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+            });
           swalWithBootstrapButtons.fire({
             title: "Deleted!",
             text: "Your file has been deleted.",
             icon: "success",
-          })
-          const remaining= lists.filter(list=>list._id!==id)
-          setLists(remaining)
-
-         
-        } else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+          });
+          const remaining = lists.filter((list) => list._id !== id);
+          setLists(remaining);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
             text: "YourList is safe :)",
@@ -57,6 +70,24 @@ function MyList() {
         }
       });
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center border min-h-[400px]">
+        <ClimbingBoxLoader
+          color="#292524"
+          loading={loading}
+          size={20}
+          speedMultiplier={1}
+        />
+
+      </div>
+    );
+  }
+
+  if (lists.length <= 0) {
+    return <NoData></NoData>
+  }
 
   return (
     <div className="overflow-x-auto min-h-96 my-20 max-w-6xl mx-auto">

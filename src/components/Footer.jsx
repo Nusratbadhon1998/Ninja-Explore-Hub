@@ -2,13 +2,23 @@ import { SlPlane } from "react-icons/sl";
 
 function Footer() {
   return (
-    <footer className=" relative footer footer-center p-10 bg-stone-800 text-stone-300  rounded">
-        <div className="absolute right-0 bottom-0">
-        <img className="w-12 h-12 lg:w-32 lg:h-32" src="https://blush.design/api/download?shareUri=oIP_KWw9pmr3K741&c=Hair_0%7E4b2500_Skin_0%7E8b4500&w=800&h=800&fm=png" alt="" />
-        </div>
-        <div className="absolute left-0 top-0">
-        <img className="w-12 h-12 lg:w-32 lg:h-32" src="https://blush.design/api/download?shareUri=oIP_KWw9pmr3K741&c=Hair_0%7E4b2500_Skin_0%7E8b4500&w=800&h=800&fm=png" alt="" />
-        </div>
+    <footer
+      className=" relative footer footer-center p-10 bg-stone-900 text-stone-300  rounded"
+    >
+      <div className="absolute right-0 bottom-0">
+        <img
+          className="w-12 h-12 lg:w-32 lg:h-32"
+          src="https://blush.design/api/download?shareUri=oIP_KWw9pmr3K741&c=Hair_0%7E4b2500_Skin_0%7E8b4500&w=800&h=800&fm=png"
+          alt=""
+        />
+      </div>
+      <div className="absolute left-0 top-0">
+        <img
+          className="w-12 h-12 lg:w-32 lg:h-32"
+          src="https://blush.design/api/download?shareUri=oIP_KWw9pmr3K741&c=Hair_0%7E4b2500_Skin_0%7E8b4500&w=800&h=800&fm=png"
+          alt=""
+        />
+      </div>
       <div className="flex items-center">
         <SlPlane className="w-8 h-8  text-stone-300 md:flex lg:flex" />
         <a className=" text-base lg:text-3xl font-bold text-stone-300">
@@ -61,9 +71,7 @@ function Footer() {
       <aside className="flex">
         <p>Copyright © 2024 - All right reserved by Ninja Explore Hub</p>
         <SlPlane className="w-4 h-4 text-stone-300 hidden md:flex lg:flex" />
-       
       </aside>
-      
     </footer>
   );
 }

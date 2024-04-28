@@ -9,13 +9,11 @@ function Nav() {
   
   const [displayName, setDisplayName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
-  const [email, setEmail] = useState("");
 
   useEffect(() => {
     if (user) {
       setDisplayName(user.displayName || "");
       setPhotoURL(user.photoURL || "");
-      setEmail(user.email ||"abc@gmail.com")
     }
   }, [user]);
   return (
@@ -59,7 +57,7 @@ function Nav() {
                 ? "text-stone-800 border-b border-stone-300 pb-1"
                 : "text-stone-900"
             }
-            to={`/lists/${email}`}
+            to={`/lists`}
           >
             My list
           </NavLink>

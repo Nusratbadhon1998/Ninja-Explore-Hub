@@ -1,14 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import axios, { isCancel, AxiosError } from "axios";
-import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 
 function Update() {
-
-    const {id}=useParams()
-    const submitCss =
+  const { id } = useParams();
+  const submitCss =
     "block w-full p-3 text-center rounded-lg text-stone-100 bg-[#292524] hover:bg-stone-700 hover:text-stone-50 font-semibold mt-4";
 
   const labelCss = "block text-stone-900 font-semibold text-base";
@@ -30,7 +27,6 @@ function Update() {
     const desc = form.desc.value;
 
     const info = {
-      
       country,
       spotName,
       location,
@@ -41,23 +37,22 @@ function Update() {
       desc,
       image,
     };
-    console.log(info)
+    console.log(info);
 
-    fetch(`http://localhost:5000/touristSpots/${id}`,{
-        method:"PUT",
-        headers:{
-            'content-type':"application/json"
-        },
-        body: JSON.stringify(info)
+    fetch(`http://localhost:5000/touristSpots/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(info),
     })
-    .then(res=>res.json())
-    .then(data=>{
-        if (data.modifiedCount){
-            toast.success("Successfully Updated Your Data")
-            form.reset()
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          toast.success("Successfully Updated Your Data");
+          form.reset();
         }
-    })
-
+      });
   };
 
   return (
@@ -71,9 +66,7 @@ function Update() {
             deleteSpeed={25}
             loop={1}
             typeSpeed={70}
-            words={[
-              "Update Your Destination",
-            ]}
+            words={["Update Your Destination!!"]}
           />
         </h1>
       </div>
@@ -82,7 +75,6 @@ function Update() {
         <div className="p-3 m-3 ">
           <form onSubmit={handleUpdate}>
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-3 full mx-auto">
-            
               {/* Tourist spot name */}
               <div>
                 <label className={labelCss}>Tourist Spot Name</label>
@@ -181,7 +173,7 @@ function Update() {
                   name="seasonality"
                   value="Summer"
                 />
-                <label className="text-stone-800 font-medium mx-4" for="html">
+                <label className="text-stone-800 font-medium mx-4" htmlFor="html">
                   Summer
                 </label>
                 <input
@@ -190,7 +182,7 @@ function Update() {
                   name="seasonality"
                   value="Winter"
                 />
-                <label className="text-stone-800 font-medium mx-4" for="css">
+                <label className="text-stone-800 font-medium mx-4" htmlFor="css">
                   Winter
                 </label>
               </div>
@@ -216,4 +208,4 @@ function Update() {
   );
 }
 
-export default Update
+export default Update;

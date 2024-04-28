@@ -6,10 +6,10 @@ function Review() {
       <div className="container px-6 py-12 mx-auto">
         <div className="grid items-center gap-4 xl:grid-cols-5">
         
-          <div className="relative px-6 py-3 font-bold text-black group max-w-2xl mx-auto my-8 space-y-4 text-center xl:col-span-2 xl:text-left">
+          <div className="relative px-6 py-3 text-stone-700 group max-w-2xl mx-auto my-8  text-center xl:col-span-2 xl:text-left">
             <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></span>
-            <span className="absolute inset-0 w-full h-full border-4 border-black"></span>
-            <span className="relative">
+            <span className="absolute inset-0 w-full h-full border-4 border-stone-600"></span>
+            <span className="relative space-y-6">
               <h2
                 data-aos="fade-right"
                 data-aos-duration="1200"
@@ -33,9 +33,9 @@ function Review() {
                 <div
                   data-aos="fade-down"
                   data-aos-duration="900"
-                  className="p-6 mt-12 rounded shadow-md dark:bg-gray-50"
+                  className="p-6 mt-12 rounded shadow-md dark:bg-gray-50  bg-[#b1b3b2] text-stone-200 border border-stone-800"
                 >
-                  <p>
+                  <p className="">
                     Indulge in opulent interiors adorned with the finest
                     materials and craftsmanship. Every detail, from the grand
                     foyer to the lavish living spaces, exudes timeless luxury.
@@ -57,7 +57,7 @@ function Review() {
                 <div
                   data-aos="fade-down"
                   data-aos-duration="900"
-                  className="p-6 rounded shadow-md dark:bg-gray-50"
+                  className="p-6 rounded shadow-md dark:bg-gray-50  bg-[#b1b3b2] text-stone-200 border border-stone-800"
                 >
                   <p>
                     Relish in the breathtaking views of the city skyline or
@@ -80,11 +80,11 @@ function Review() {
                   </div>
                 </div>
               </div>
-              <div className="grid content-center gap-4">
+              <div className="grid content-center gap-4 ">
                 <div
                   data-aos="fade-up"
                   data-aos-duration="900"
-                  className="p-6 rounded shadow-md dark:bg-gray-50"
+                  className="p-6 rounded shadow-md dark:bg-gray-50 bg-[#b1b3b2] text-stone-200 border border-stone-800"
                 >
                   <p>
                     Experience unparalleled amenities and services designed to
@@ -109,7 +109,7 @@ function Review() {
                 <div
                   data-aos="fade-up"
                   data-aos-duration="900"
-                  className="p-6 rounded shadow-md dark:bg-gray-50"
+                  className="p-6 rounded shadow-md dark:bg-gray-50  bg-[#b1b3b2] text-stone-200 border border-stone-800"
                 >
                   <p>
                     Discover a lifestyle of unparalleled luxury and

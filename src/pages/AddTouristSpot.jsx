@@ -52,7 +52,7 @@ function AddTouristSpot() {
     };
     console.log(info);
 
-    axios.post("http://localhost:5000/touristSpots", info).then((data) => {
+    axios.post("https://ninja-explore-hub-server.vercel.app/touristSpots", info).then((data) => {
       console.log(data);
       if (data.data.insertedId) {
         toast.success("Successfully added tourist spot in database");
@@ -89,7 +89,7 @@ function AddTouristSpot() {
                 <input
                   name="name"
                   type="text"
-                  placeholder="User Name"
+                  defaultValue={userName}
                   className={inputCss}
                 />
               </div>
@@ -99,7 +99,7 @@ function AddTouristSpot() {
                 <input
                   name="email"
                   type="email"
-                  placeholder="Email"
+                  defaultValue={email}
                   className={inputCss}
                 />
               </div>
@@ -116,14 +116,21 @@ function AddTouristSpot() {
               </div>
               {/* Country name */}
               <div>
+          
+
                 <label className={labelCss}>Country Name</label>
-                <input
-                  type="text"
-                  name="country"
-                  placeholder="Country"
-                  className={inputCss}
-                  required
-                />
+
+                <select className={inputCss} name="country">
+                  <option className="font-semibold" value="">
+                    --Please Select Country--
+                  </option>
+                  <option value="France">France</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Spain">Spain</option>
+                  <option value="England">England</option>
+                  <option value="Netherlands">Netherlands</option>
+                  <option value="Switzerland">Switzerland</option>
+                </select>
               </div>
               {/* Location */}
               <div>
@@ -141,7 +148,7 @@ function AddTouristSpot() {
                 <label className={labelCss}>Average Cost</label>
                 <input
                   name="cost"
-                  type="number"
+                  type="text"
                   placeholder="Avg Cost"
                   className={inputCss}
                   required
@@ -163,7 +170,7 @@ function AddTouristSpot() {
                 <label className={labelCss}>Total Visitors Per Year</label>
                 <input
                   name="totalVisitor"
-                  type="number"
+                  type="text"
                   placeholder="Total Visit"
                   className={inputCss}
                   required
@@ -201,7 +208,10 @@ function AddTouristSpot() {
                   name="seasonality"
                   value="Summer"
                 />
-                <label className="text-stone-800 font-medium mx-4" for="html">
+                <label
+                  className="text-stone-800 font-medium mx-4"
+                  htmlFor="html"
+                >
                   Summer
                 </label>
                 <input
@@ -210,7 +220,10 @@ function AddTouristSpot() {
                   name="seasonality"
                   value="Winter"
                 />
-                <label className="text-stone-800 font-medium mx-4" for="css">
+                <label
+                  className="text-stone-800 font-medium mx-4"
+                  htmlFor="css"
+                >
                   Winter
                 </label>
               </div>
