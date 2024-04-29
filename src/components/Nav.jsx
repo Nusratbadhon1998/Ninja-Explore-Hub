@@ -95,7 +95,7 @@ function Nav() {
       </div>
       {/* navbar center */}
       <div className=" navbar-start md:px-0 lg:navbar-center flex w-[40%] items-center justify-center lg:mr-8 ">
-        <div className="dropdown text-stone-800">
+        <div className="dropdown text-stone-100">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +183,7 @@ function Nav() {
         </div>
       </div>
       {/* navbar end */}
-      <div className="*:font-bold lg:w-[30%] flex items-center navbar-end  gap-3">
+      <div className="*:font-bold lg:w-[30%]  items-center navbar-end hidden lg:flex  gap-3">
         <label className="swap swap-rotate">
           <input
             type="checkbox"
@@ -268,6 +268,58 @@ function Nav() {
             </NavLink>
           </div>
         )}
+      </div>
+      {/* For small */}
+      <div className="flex-none navbar-end  lg:hidden">
+       <div className="block navbar-end lg:hidden dropdown dropdown-end">
+          {user ? (
+            <div>
+              <div
+                tabIndex={0}
+                role="button"
+                className="rounded-full avatar"
+              >
+                <div
+                  className="tooltip tooltip-bottom rounded-full avatar w-12 h-12 ml-16 md:ml-44"
+                  data-tip={displayName || "User Name not found"}
+                >
+                  <img
+                    alt=""
+                    className="w-9 h-9 rounded-full ring-2 ring-offset-4 bg-[#fc6736] ring-[#fc6736]ring-offset-gray-100"
+                    src={
+                      photoURL ||
+                      "https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"
+                    }
+                  />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="text-black font-semibold menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <button onClick={logOut}>Log Out</button>
+                </li>
+              
+              </ul>
+            </div>
+          ) : (
+            <div className="space-x-4 flex *:text-white">
+              <ul className="flex gap-3 font-semibold">
+              <li className="text-stone-100 border-none outline-none">
+                {" "}
+                <Link to="/login">LogIn</Link>
+              </li>
+
+              <li>
+                  <Link to="/register">Register</Link>
+                </li>
+              </ul>
+             
+            </div>
+          )}
+        </div>
+
       </div>
     </nav>
   );

@@ -120,7 +120,7 @@ function Login() {
             {error && <small className="text-red-500 text-left">{error}</small>}
 
             <input
-              className="block w-full p-3 text-center rounded-lg text-stone-100 bg-stone-600 hover:bg-stone-500 hover:text-stone-50 font-semibold"
+              className="block w-full p-3 text-center rounded-lg text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f] font-semibold"
               type="submit"
               value="Sign In"
             />

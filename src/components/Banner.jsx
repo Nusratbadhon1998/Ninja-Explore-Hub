@@ -46,7 +46,7 @@ function Banner() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 1200,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -65,34 +65,34 @@ function Banner() {
         <SwiperSlide>
           <img
             className="w-full h-full bg-cover inset-0"
-            src="https://img.freepik.com/free-photo/general-view-toledo-from-hill_1398-4496.jpg?t=st=1714096664~exp=1714100264~hmac=338b54333d4cbdf26b1adfa421f6dcf4ce734d6d82d49d302b744d07f15825d7&w=826"
+            src="https://images.unsplash.com/photo-1594069758873-e79e9075eb7d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full h-full bg-cover inset-0"
-            src="https://img.freepik.com/free-photo/view-prague-by-night_268835-1129.jpg?t=st=1714096709~exp=1714100309~hmac=d108ed4d9beb3a81a4270d3949bd97e4f355a73a201229efd13cc0ec1b67c762&w=996"
+            src="https://images.unsplash.com/photo-1545073334-9cb53498f1dc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full h-full bg-cover inset-0"
-            src="https://img.freepik.com/free-photo/mesmerizing-view-houses-fields-covered-snow-surrounded-by-mountains-trees_181624-13827.jpg?t=st=1714096750~exp=1714100350~hmac=8226c7e60cd36159d6ee05c32f823e36e8e0d28ba90cbae86e69d6be400fe48b&w=996"
+            src="https://images.unsplash.com/photo-1610046226394-be65aabee26d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full h-full bg-cover inset-0"
-            src="https://img.freepik.com/free-photo/amazing-autumn-scenery-santa-maddalena-village-with-church-colorful-trees-meadows-rising-sun-rays-dolomite-alps-italy_661209-245.jpg?t=st=1714096862~exp=1714100462~hmac=b8563a1e73426fbec95ea71b4a7c8c81bdaf7ab2c8c3864a8d7cdac246b3048c&w=996"
+            src="https://images.unsplash.com/photo-1551634979-2b11f8c946fe?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
         </SwiperSlide>
       </Swiper>
-      {/* FOR SMALL DEVICE */}
-      <div className="h-96 block relative z-50 lg:hidden carousel carousel-vertical rounded-box">
+      {/* FOR SMALL DEVICE */} 
+     <div className="h-96 block relative z-50 lg:hidden carousel carousel-vertical rounded-box">
         <div className="carousel-item h-full">
           <img src="https://img.freepik.com/free-photo/beautiful-shot-famous-roman-colosseum-amphitheater-breathtaking-sky-sunrise_181624-6998.jpg?t=st=1714096609~exp=1714100209~hmac=0960aafd4387c995086f99ef71762e168446e03177c125410e4a5ba72410cee4&w=826" />
         </div>

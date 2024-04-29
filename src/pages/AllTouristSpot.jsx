@@ -45,8 +45,13 @@ function AllTouristSpot() {
         <title>All Tour Spots</title>
       </Helmet>
       <div className="max-w-6xl mx-auto my-28">
+      <div  data-aos="fade-up" data-aos-duration="1200" className="my-12 text-center space-y-6" >
+          <h1 className="text-4xl font-bold">Explore Europe's Diverse Tourist Destinations</h1>
+          <p className="text-base font-light">Discover the charm of charming villages, indulge in delectable cuisine, and immerse yourself in the timeless beauty of Europe's timeless wonders. Start planning your unforgettable European adventure today!</p>
+        </div>
       <div className="dropdown dropdown-top flex justify-center">
-        <div tabIndex={0} role="button" className="btn w-72 text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f]">
+       
+        <div data-aos="fade-down" data-aos-duration="1200" data-aos-delay="200" tabIndex={0} role="button" className="btn w-72 text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f]">
           Sort
         </div>
         <ul
@@ -59,7 +64,7 @@ function AllTouristSpot() {
         </ul>
       </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
         {allSpots.map((spot) => (
           <TouristSpotCard key={spot._id} info={spot}></TouristSpotCard>
         ))}

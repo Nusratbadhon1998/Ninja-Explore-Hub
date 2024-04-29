@@ -89,7 +89,7 @@ function AuthProvider({ children }) {
 
   const allValue = {
     createUser,
-    user,setUser,
+    user,
 
     loading,
     setLoading,
