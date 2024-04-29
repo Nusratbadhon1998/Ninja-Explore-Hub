@@ -14,7 +14,7 @@ function TouristSpotsContainer({ data }) {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-col md:flex-col lg:flex-row justify-between items-center gap-2">
-        <div className="w-full lg:w-[50%] space-y-5">
+        <div className="w-full p-5 lg:p-2 lg:w-[50%] space-y-5">
           <Fade cascade damping={0.1} duration={1000}>
             <h1 className="text-4xl font-bold text-stone-100">
               Discover Our Top Destinations

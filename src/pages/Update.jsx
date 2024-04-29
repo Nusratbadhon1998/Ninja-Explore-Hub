@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Update() {
   const { id } = useParams();
@@ -72,6 +73,9 @@ function Update() {
       </div>
 
       <div className="w-full lg:w-[60%] mx-auto bg-stone-400 bg-opacity-35 rounded-lg p-5 mb-4">
+      <Helmet>
+        <title>Update Your Spots</title>
+      </Helmet>
         <div className="p-3 m-3 ">
           <form onSubmit={handleUpdate}>
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-3 full mx-auto">

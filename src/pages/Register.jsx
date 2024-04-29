@@ -5,6 +5,7 @@ import { HiOutlineEyeOff } from "react-icons/hi";
 import { HiOutlineEye } from "react-icons/hi";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 function Register() {
   const [showPass, setShowPass] = useState(false);
@@ -103,6 +104,9 @@ function Register() {
   };
   return (
     <div className="flex flex-col md:flex-row lg:flex-row">
+        <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="w-full  md:w-[75%] lg:w-[80%] min-h-screen relative">
         <video
           autoPlay

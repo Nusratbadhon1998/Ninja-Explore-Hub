@@ -31,15 +31,22 @@
 
   /* Responsive */
 
-  @media screen and (min-width: 320px) and (max-width:950px) {
-       .swiper {
-      width: full;
-      height: 100%;
+  @media screen and (max-width: 320px) {
+  .swiper {
+      display: none;
     }
-       .mySwiper{
-      width: full;
-      height: 100%;
   
+    .second-swiper .swiper-slide {
+      display: none; 
+    }
   }
-    
+  
+  @media screen and (min-width: 321px) and (max-width: 991px) {
+ .swiper {
+      display: none;
+    }
+    .second-swiper .swiper-slide {
+      display: none;
+    }
   }
+  

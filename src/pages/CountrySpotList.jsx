@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom'
 import TouristSpotCard from '../components/TouristSpotCard'
 import CountriesCard from '../components/CountriesCard'
 import NoCountry from '../components/NoCountry'
+import { Helmet } from 'react-helmet-async'
 
 function CountrySpotList() {
     const data= useLoaderData()
@@ -13,6 +14,9 @@ function CountrySpotList() {
     }
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-6xl mx-auto my-20'>
+      <Helmet>
+        <title>Countries Tour Spots</title>
+      </Helmet>
         {infos.map(info=><CountriesCard key={info._id} info={info}></CountriesCard>)}
     </div>
   )

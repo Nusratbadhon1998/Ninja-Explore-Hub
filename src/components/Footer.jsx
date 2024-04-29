@@ -2,8 +2,8 @@ import { SlPlane } from "react-icons/sl";
 
 function Footer() {
   return (
-    <footer className="bg-[#110726] text-stone-300 py-8">
-      <div className="container mx-auto flex flex-col justify-center lg:flex-row items-center lg:justify-between">
+    <footer className="bg-[#110726] text-stone-300 py-8 ">
+      <div className="container max-w-6xl mx-auto flex flex-col justify-center lg:flex-row items-center lg:justify-between">
         <div className="mb-4 lg:mb-0 space-y-4 flex flex-col justify-center items-center lg:text-left ">
           <SlPlane className="w-12 h-12  text-stone-300 md:flex lg:flex" />
           <h2 className="text-2xl font-bold">Ninja Explore Hub</h2>

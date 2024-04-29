@@ -3,6 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 import axios, { isCancel, AxiosError } from "axios";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 function AddTouristSpot() {
   const { user } = useContext(AuthContext);
@@ -63,6 +64,9 @@ function AddTouristSpot() {
 
   return (
     <div className="bg-[url(https://blush.design/api/download?shareUri=aZhNm7MrStKsvxDp&c=Bottom_0%7E342a83_Hair_0%7E2c1b18_Skin_0%7Edcae92_Top_0%7Eff4133&w=800&h=800&fm=png)] bg-opacity-50 bg-no-repeat bg-right">
+        <Helmet>
+        <title>Add Your Spots</title>
+      </Helmet>
       <div className="w-3/4 mx-auto my-12">
         <h1 className="text-stone-100 font-bold text-center my-8 text-4xl">
           <Typewriter

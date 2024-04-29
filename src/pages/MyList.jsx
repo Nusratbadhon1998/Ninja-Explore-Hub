@@ -5,6 +5,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import {  ClimbingBoxLoader } from "react-spinners";
 import NoData from "../components/NoData";
+import { Helmet } from "react-helmet-async";
 
 function MyList() {
   // const { data, isLoading, refetch } = useData();
@@ -90,6 +91,9 @@ function MyList() {
 
   return (
     <div className="overflow-x-auto min-h-96 my-20 max-w-6xl mx-auto">
+       <Helmet>
+        <title>My List</title>
+      </Helmet>
       <table className="table text-stone-100 font-semibold">
         {/* head */}
         <thead className="text-stone-100">

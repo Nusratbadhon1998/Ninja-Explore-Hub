@@ -12,7 +12,7 @@ function ErrorPage() {
         </p>
         <Link
           to="/"
-          className="px-8 py-3 font-semibold rounded bg-stone-600 text-stone-50 dark:bg-violet-600 dark:text-gray-50"
+          className="px-8 py-3 font-semibold rounded text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f] "
         >
           Back to homepage
         </Link>

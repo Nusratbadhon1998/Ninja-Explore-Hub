@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import TouristSpotCard from "../components/TouristSpotCard";
 import { RingLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
 
 function AllTouristSpot() {
   
@@ -40,6 +41,9 @@ function AllTouristSpot() {
   };
   return (
     <div className="my-12">
+        <Helmet>
+        <title>All Tour Spots</title>
+      </Helmet>
       <div className="max-w-6xl mx-auto my-28">
       <div className="dropdown dropdown-top flex justify-center">
         <div tabIndex={0} role="button" className="btn w-72 text-stone-50 bg-gradient-to-r from-[#612bd3] to-[#6e008f]">

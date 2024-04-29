@@ -1,5 +1,5 @@
 import { SlPlane } from "react-icons/sl";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -114,20 +114,70 @@ function Nav() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-[#2b2739] rounded-box w-52"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-           
-            <li>
-              <a>Item 3</a>
-            </li>
+          
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? `${
+                        theme === "dark" ? "text-stone-100" : "text-stone-50"
+                      } border-b border-stone-300 pb-1`
+                    : `${theme === "dark" ? "text-white" : "text-stone-100"}`
+                }
+                to="/"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? `${
+                        theme === "dark" ? "text-stone-100" : "text-stone-50"
+                      } border-b border-stone-300 pb-1`
+                    : `${theme === "dark" ? "text-white" : "text-stone-100"}`
+                }
+                to="/all-tourist-spot"
+              >
+                All Tourist spot
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? `${
+                        theme === "dark" ? "text-stone-100" : "text-stone-50"
+                      } border-b border-stone-300 pb-1`
+                    : `${theme === "dark" ? "text-white" : "text-stone-100"}`
+                }
+                to="/add-tourist-spot"
+              >
+                Add Tourist Spot
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? `${
+                        theme === "dark" ? "text-stone-100" : "text-stone-50"
+                      } border-b border-stone-300 pb-1`
+                    : `${theme === "dark" ? "text-white" : "text-stone-100"}`
+                }
+                to={`/lists`}
+              >
+                My list
+              </NavLink>
           </ul>
         </div>
         <div className="flex items-center">
-          <SlPlane className={`w-8 h-8  ${theme === "dark" ? "text-white" : "text-stone-100"} hidden md:flex lg:flex`} />
-          <a className={ `lg:text-3xl font-bold ${theme === "dark" ? "text-white" : "text-stone-100"} `}>
+          <SlPlane
+            className={`w-8 h-8  ${
+              theme === "dark" ? "text-white" : "text-stone-100"
+            } hidden md:flex lg:flex`}
+          />
+          <a
+            className={`lg:text-3xl font-bold ${
+              theme === "dark" ? "text-white" : "text-stone-100"
+            } `}
+          >
             Ninja Explore Hub
           </a>
         </div>
@@ -174,21 +224,30 @@ function Nav() {
               />
             </div>
 
-            <button onClick={logOut} className={` ${theme === "dark" ? "text-white" : "text-stone-100"}`}>
+            <button
+              onClick={logOut}
+              className={` ${
+                theme === "dark" ? "text-white" : "text-stone-100"
+              }`}
+            >
               LogOut
             </button>
           </>
         ) : (
           <div className="*:font-bold flex items-center justify-between gap-3">
-            <FaRegUser className={`w-5 h-5 ${theme === "dark" ? "text-white" : "text-stone-100"}`} />
+            <FaRegUser
+              className={`w-5 h-5 ${
+                theme === "dark" ? "text-white" : "text-stone-100"
+              }`}
+            />
 
             <NavLink
               className={({ isActive }) =>
-              isActive
-              ? `${
-                  theme === "dark" ? "text-stone-100" : "text-stone-50"
-                } border-b border-stone-300 pb-1`
-              : `${theme === "dark" ? "text-white" : "text-stone-100"}`
+                isActive
+                  ? `${
+                      theme === "dark" ? "text-stone-100" : "text-stone-50"
+                    } border-b border-stone-300 pb-1`
+                  : `${theme === "dark" ? "text-white" : "text-stone-100"}`
               }
               to="/login"
             >
@@ -198,10 +257,10 @@ function Nav() {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                ? `${
-                    theme === "dark" ? "text-stone-100" : "text-stone-50"
-                  } border-b border-stone-300 pb-1`
-                : `${theme === "dark" ? "text-white" : "text-stone-100"}`
+                  ? `${
+                      theme === "dark" ? "text-stone-100" : "text-stone-50"
+                    } border-b border-stone-300 pb-1`
+                  : `${theme === "dark" ? "text-white" : "text-stone-100"}`
               }
               to="/register"
             >
