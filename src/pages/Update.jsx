@@ -103,6 +103,7 @@ function Update() {
                   <option  className="text-stone-500"value="England">England</option>
                   <option  className="text-stone-500"value="Netherlands">Netherlands</option>
                   <option  className="text-stone-500"value="Switzerland">Switzerland</option>
+                  <option  className="text-stone-500"value="Russia">Russia</option>
                 </select>
               </div>
               {/* Location */}

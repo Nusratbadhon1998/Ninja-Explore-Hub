@@ -121,7 +121,7 @@ function AddTouristSpot() {
               {/* Country name */}
               <div>
                 <label className={labelCss}>Country Name</label>
-                <select className="text-stone-500 input w-full max-w-xs" name="country">
+                <select required className="text-stone-500 input w-full max-w-xs" name="country">
                   <option className="text-stone-500" value="">
                     --Please Select Country--
                   </option>
@@ -131,6 +131,7 @@ function AddTouristSpot() {
                   <option  className="text-stone-500"value="England">England</option>
                   <option  className="text-stone-500"value="Netherlands">Netherlands</option>
                   <option  className="text-stone-500"value="Switzerland">Switzerland</option>
+                  <option  className="text-stone-500"value="Russia">Russia</option>
                 </select>
               </div>
               {/* Location */}
